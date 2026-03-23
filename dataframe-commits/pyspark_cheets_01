@@ -1,0 +1,57 @@
+#extracting columnname from dataframe
+
+->df.select('column1','column2')
+->df.select(df1.column1,df.column2)
+->From pyspark.sql.functions import*
+  df.select(col('column1'),col('column2'))
+ ->df.select('*')
+ 
+ #cast
+ ->df.select(col('salary').cast('float'))
+ ->df.withcolumn('salary',col('salary').cast('float'))
+ 
+ #substr(startPos,length)
+ ->df.select(col('name').substr(1,3).alias('short_name'))
+ 
+ #substring(col,startPos,length)
+ from pyspark.sql.functions import*
+ ->df.select(substring(col('name'),1,3).alias('short_name'))
+ 
+ #when & otherwise
+ df1.select(col('id'),col('name'),col('dept'),
+            when(col('dept')=='10','IT')\
+			.when(col('dept')=='20','HR')\
+			.when(col('dept')=='30','FINANCE')\
+			.when(col('dept')=='40','NON-IT')\
+			.otherwise('INVALID DEPT')\
+			.alias('DEPT_NAME')
+
+#withColumn(camelCase)
+df.withColumn('columnname',expression)
+
+#withColumnRenamed('old_name','new_name')
+->df.withColumnRenamed('old_name','new_name')
+
+#python listcomprehenssion
+sq= [i**2 for i in range(1,6)]
+
+#filter(){similar to where in sql}
+->Employees in dept 10 or 20
+df.filter(col("dept").isin("10", "20")).show()
+-> Employees with salary greater than 5000
+df.filter(col("salary") > 5000).show()
+
+#df.dropDuplicates()               removes duplicates across all columns
+#df.dropDuplicates(["col1","col2"])   removes duplicates based on selected columns
+
+#sort()
+df.sort(col('salary').desc())
+(or)
+df.orderBy(col('salary').desc())
+
+
+
+
+
+
+ 
