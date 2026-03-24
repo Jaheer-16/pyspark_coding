@@ -1,0 +1,45 @@
+#groupBy
+
+from pyspark.sql.functions import sum, avg, max
+df.groupBy("dept").agg(
+    sum("salary").alias("total_sal"),
+    avg("salary").alias("avg_sal"),
+    max("salary").alias("max_sal")
+)
+
+
+#joins()
+inner-->df1.join(df2,df1.id==df2.id,'inner')
+
+left-->df1.join(df2,df1.id==df2.id,'left')
+
+lef_semi-->df1.join(df2,df1.id==df2.id,'lef_semi')
+
+left_anti-->df1.join(df2,df1.id==df2.id,'lef_anti')
+
+outer-->df1.join(df2, df1.id == df2.id, "outer")
+
+cross-->df1.join(df2)
+
+#union()
+->df1.union(df2)
+->df1.union(df2).distinct()
+->df1.unionByName(df2)
+->df1.unionByName(df2, allowMissingColumns=True)
+
+#fillna()
+->df.fillna(0)-->replaces number which has null with 0
+->df.fillna('unknown')-->replaces string which has null with unknown
+->df.fillna(999,subset=['salary'])
+->df.fillna({"salary": 0, "dept": "Unknown"})
+
+#dropna()
+->df.dropna()-->drop row which any have null
+->df.dropna(how=all)-->drop if all rows contain null
+->df.dropna(how=all,subset=['phn','email])-->drop only  if two cloumns are null
+ 
+
+
+
+
+
