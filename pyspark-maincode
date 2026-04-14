@@ -1,0 +1,37 @@
+3. String Functions
+- concat(), concat_ws() – combine strings
+- lower(), upper() – case transformations
+- regexp_replace(), regexp_extract() – regex operations
+- substring() – extract substrings
+4. Date & Time Functions
+- current_date(), current_timestamp() – get system date/time
+- datediff(), months_between() – calculate differences
+- date_add(), date_sub() – manipulate dates
+- year(), month(), dayofweek() – extract components
+5. Aggregation & Grouping
+- groupBy().agg() – group and aggregate
+- count(), sum(), avg(), max(), min() – basic aggregations
+- collect_list(), collect_set() – gather values into arrays
+6. Window Functions
+- row_number(), rank(), dense_rank() – ranking
+- lead(), lag() – look ahead/behind in partitions
+- ntile() – bucket rows into groups
+7. Null Handling
+- coalesce() – first non-null value
+- fillna(), dropna() – handle missing values
+- isnull(), isnotnull() – check nulls
+8. Array & Map Functions
+- explode() – flatten arrays
+- size() – length of array
+- map_keys(), map_values() – extract map elements
+9. Joins & Merging
+- join() – inner, left, right, full joins
+- union(), unionByName() – combine DataFrames
+- intersect(), exceptAll() – set operations
+10. File I/O Functions
+- read.csv(), read.json(), read.parquet() – load data
+- write.csv(), write.parquet() – save data
+- option("header", True) – configure file reads/writes
+11. UDFs (User Defined Functions)
+- udf() – define custom Python functions for transformations
+- pandas_udf() – vectorized UDFs for performance
